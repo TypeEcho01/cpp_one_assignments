@@ -10,7 +10,15 @@ long fibonacci(const int n)
 
 int linear_search(Array * a, const int target)
 {
-    return 0;
+    for (size_t i = 0; i < a->len; i++)
+    {
+        int elem = a->data[i];
+
+        if (elem == target)
+            return (int)i;
+    }
+
+    return -1;
 }
 
 long factorial(const int n)
