@@ -11,6 +11,8 @@ auto main(int argc, char *argv[]) -> int
     printf("%s%d\n", "linear_search(a, 1) = ", linear_search(a, 1));
     printf("%s%d\n", "linear_search(a, 5) = ", linear_search(a, 5));
     printf("%s%d\n", "linear_search(a, 7) = ", linear_search(a, 7));
+    printf("\n");
+    printf("%s%lld\n", "fibonacci(1000) = ", fibonacci(100000));
 
     return 0;
 }

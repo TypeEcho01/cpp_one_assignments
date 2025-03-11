@@ -3,18 +3,29 @@
 
 #include "types.hpp"
 
-long fibonacci(const int n)
+typedef unsigned long long uVeryLong;
+
+uVeryLong fibonacci(const int n)
 {
-    return 0;
+    uVeryLong prev = 1;
+    uVeryLong prev_prev = 0;
+    uVeryLong sum = 0;
+
+    for (uVeryLong i = 2; i <= n; i++)
+    {
+        sum = prev + prev_prev;
+        prev_prev = prev;
+        prev = sum;
+    }
+
+    return sum;
 }
 
 int linear_search(Array * a, const int target)
 {
     for (size_t i = 0; i < a->len; i++)
     {
-        int elem = a->data[i];
-
-        if (elem == target)
+        if (a->data[i] == target)
             return (int)i;
     }
 
@@ -23,7 +34,10 @@ int linear_search(Array * a, const int target)
 
 long factorial(const int n)
 {
-    return 0;
+    if (n == 0)
+        return 1;
+
+    return n * factorial(n);
 }
 
 #endif // ALGO_H_
