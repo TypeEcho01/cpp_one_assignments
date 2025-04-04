@@ -1,18 +1,27 @@
 #include <iostream>
 #include "../include/algo.hpp"
 
-auto main(int argc, char *argv[]) -> int
+typedef long long longest;
+typedef unsigned long positive_long_only;
+
+positive_long_only fib_iterative(const positive_long_only n)
 {
-    //              0  1  2  3  4
-    int input[5] = {1, 3, 5, 6, 5};
-    Array* a = init(5, input);
+    positive_long_only prev = 1;
+    positive_long_only prev_prev = 0;
+    positive_long_only sum = 0;
+    for(positive_long_only i = 2; i <= n; i++)
+    {
+        sum = prev + prev_prev;
+        prev_prev = prev;
+        prev = sum;
+    }
+    return sum;
+}
 
-    printf("%s%d\n", "linear_search(a, 6) = ", linear_search(a, 6));
-    printf("%s%d\n", "linear_search(a, 1) = ", linear_search(a, 1));
-    printf("%s%d\n", "linear_search(a, 5) = ", linear_search(a, 5));
-    printf("%s%d\n", "linear_search(a, 7) = ", linear_search(a, 7));
-    printf("\n");
-    printf("%s%lld\n", "fibonacci(1000) = ", fibonacci(100000));
-
+int main() {
+    int y = fib_iterative(10000000000000000);
+    std::cout << y << std::endl;
+    //int x= fibonacci(10000);
+    //std::cout << x << std::endl;
     return 0;
 }

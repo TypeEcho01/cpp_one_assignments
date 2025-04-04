@@ -5,9 +5,9 @@
 // Demonstrate some basic assertions.
 TEST(FIBBONACCI_TEST, BasicAssertions) {
     // Expect equality.
-    const long result = fibonacci(5);
+    const long result = fibonacci(6);
 
-    EXPECT_EQ(result, 5);
+    EXPECT_EQ(result, 8);
 }
 
 TEST(LINEAR_SEARCH_TEST, BasicAssertions) {
@@ -29,4 +29,10 @@ TEST(LINEAR_SEARCH_MISSING_TEST, BasicAssertions) {
 TEST(FACTORIAL_TEST, BasicAssertions) {
     long result = factorial(5);
     EXPECT_EQ(result, 120);
+}
+
+TEST(FIZZBUZZ_TEST, BasicAssertions) { 
+    const int n = 3;
+    std::string result = fizz_buzz_checker(n);
+    EXPECT_EQ(result, "fizz");
 }
