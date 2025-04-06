@@ -1,4 +1,5 @@
 #include <stdexcept>
+#include <iostream>
 
 #include "../include/board.h"
 #include "../include/example_solver.h"

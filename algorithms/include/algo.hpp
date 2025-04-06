@@ -2,53 +2,42 @@
 #define ALGO_H_
 
 #include "types.hpp"
-#include <iostream>
-#include <string>
 
-long fibonacci(const int n)
+typedef unsigned long long uVeryLong;
+
+uVeryLong fibonacci(const int n)
 {
-    std::cout << n << std::endl;
-    if(n == 0 || n == 1)
+    uVeryLong prev = 1;
+    uVeryLong prev_prev = 0;
+    uVeryLong sum = 0;
+
+    for (uVeryLong i = 2; i <= n; i++)
     {
-        return n;
+        sum = prev + prev_prev;
+        prev_prev = prev;
+        prev = sum;
     }
-    return fibonacci(n - 1) + fibonacci(n - 2);
+
+    return sum;
 }
 
 int linear_search(Array * a, const int target)
 {
-    for(size_t i = 0; i < a->len; i++)
+    for (size_t i = 0; i < a->len; i++)
     {
-        if(a->data[i] == target)
-        {
-            return i;
-        }
+        if (a->data[i] == target)
+            return (int)i;
     }
+
     return -1;
 }
 
 long factorial(const int n)
 {
-    if(n == 0)
+    if (n == 0)
         return 1;
-    else{
-        return n * factorial(n - 1);
-    }
-}
 
-std::string fizz_buzz_checker(const int n) {
-    if (n % 15 == 0) {
-        return "fizzbuzz";
-    }
-    else if (n % 5 == 0)
-    {
-        return "buzz";
-    }
-    else if (n % 3 == 0)
-    {
-        return "fizz";
-    }
-    return "";
+    return n * factorial(n);
 }
 
 #endif // ALGO_H_
