@@ -1,4 +1,4 @@
-#include <gtest/gtest.h>
+    #include <gtest/gtest.h>
 
 #include "../include/board.h"
 #include "../include/example_solver.h"

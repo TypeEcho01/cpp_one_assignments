@@ -6,7 +6,7 @@
 class UserSolver : public Solver {
    public:
     void solve(Board &board) override;
-    void nearMiss(size_t x, size_t y, Board &board);
+    void guess_nearby_cells(int x, int y, Board &board, std::vector<std::vector<bool>> &guessed_cells);
 };
 
 #endif // USER_SOLVER_H_
